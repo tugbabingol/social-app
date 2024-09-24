@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ScreenWrapper from '../components/ScreenWrapper'
 import { StatusBar } from 'react-native-web'
@@ -22,11 +22,21 @@ const Welcome = () => {
 
         {/*footer */}
         <View style={styles.footer}>
-          <Button 
+          <Button
             title="Getting Started"
-            buttonStyle={{marginHorizontal : wp(3)}}
-            onPress={()=>{}}
+            buttonStyle={{ marginHorizontal: wp(3) }}
+            onPress={() => { }}
           />
+          <View style={styles.bottomTextContainer}>
+            <Text style={styles.loginText}>
+              Already have an account!
+            </Text>
+            <Pressable>
+              <Text style={[styles.loginText, {color: theme.colors.primaryDark, fontWeight: theme.fonts.semibold}]}>
+                Login
+              </Text>
+            </Pressable>
+          </View>
         </View>
       </View>
     </ScreenWrapper>
@@ -48,20 +58,31 @@ const styles = StyleSheet.create({
     width: wp(100),
     alignSelf: 'center'
   },
-  title:{
+  title: {
     color: theme.colors.text,
     fontSize: hp(4),
     textAlign: 'center',
     fontWeight: theme.fonts.extraBold
   },
-  punchline:{
-    textAlign:'center',
-    paddingHorizontal:wp(10),
+  punchline: {
+    textAlign: 'center',
+    paddingHorizontal: wp(10),
     fontSize: hp(1.7),
     color: theme.colors.text
   },
-  footer:{
-    gap:30,
-    width:'100%'
+  footer: {
+    gap: 30,
+    width: '100%'
+  },
+  bottomTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 5
+  },
+  loginText:{
+    textAlign:'center',
+    color: theme.colors.text,
+    fontSize: hp(1.6)
   }
 })
