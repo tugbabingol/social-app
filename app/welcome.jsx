@@ -1,7 +1,6 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, StyleSheet, Text, View, StatusBar } from 'react-native'
 import React from 'react'
 import ScreenWrapper from '../components/ScreenWrapper'
-import { StatusBar } from 'react-native-web'
 import { hp, wp } from '../helpers/common'
 import { theme } from '../constants/theme'
 import Button from '../components/Button'
