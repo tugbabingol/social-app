@@ -14,7 +14,7 @@ const Login = () => {
   const router = useRouter();
   const emailRef=useRef("");
   const passwordRef=useRef("");
-  cons[loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async ()=>{
     if (!emailRef.current || !passwordRef.current) {

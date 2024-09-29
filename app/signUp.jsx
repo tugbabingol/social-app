@@ -15,7 +15,7 @@ const SignUp = () => {
   const emailRef=useRef("");
   const nameRef=useRef("");
   const passwordRef=useRef("");
-  cons[loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async ()=>{
     if (!emailRef.current || !passwordRef.current) {

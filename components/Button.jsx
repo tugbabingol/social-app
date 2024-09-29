@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { theme } from '../constants/theme'
 import Loading from './Loading'
+import { hp } from '../helpers/common'
 
 const Button = ({
     buttonStyle,
