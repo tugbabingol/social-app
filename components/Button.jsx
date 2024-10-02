@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { theme } from '../constants/theme'
 import Loading from './Loading'
@@ -9,7 +9,7 @@ const Button = ({
     textStyle,
     title = '',
     onPress = () => { },
-    loading = true,
+    loading = false,
     hasShadow = true,
 }) => {
     const shadowStyle = {
