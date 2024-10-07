@@ -1,13 +1,13 @@
 import { Alert, Pressable, StyleSheet, Text, View ,StatusBar} from 'react-native'
 import React, { useRef, useState } from 'react'
 import ScreenWrapper from '../components/ScreenWrapper'
-import Icon from '../assets/icons'
 import BackButton from '../components/BackButton'
 import { useRouter } from 'expo-router'
 import { hp, wp } from '../helpers/common'
 import { theme } from '../constants/theme'
 import Input from '../components/Input'
 import Button from '../components/Button'
+import Icon from '../assets/icons'
 
 const Login = () => {
   const router = useRouter();
@@ -26,7 +26,9 @@ const Login = () => {
     <ScreenWrapper bg="white">
       <StatusBar style="dark"/>
       <View style={styles.container}>
-        <BackButton router={router}/>
+       <BackButton router={router}/> 
+
+       
         {/* welcome */}
         <View>
           <Text style={styles.welcomeText}>Hey,</Text>

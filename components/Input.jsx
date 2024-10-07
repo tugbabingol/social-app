@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
 import React from 'react'
 import { hp } from '../helpers/common'
 import { theme } from '../constants/theme'
@@ -7,7 +7,7 @@ const Input = (props) => {
   return (
     <View style={[styles.container, props.containerStyles && props.containerStyles]}>
       {
-        props.icon && props.icon
+        <props className="icon"></props> && props.icon
       }
       <TextInput
         style={{flex:1}}

@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import { useRouter } from 'expo-router'
 import ScreenWrapper from '../components/ScreenWrapper'
 import Button from '../components/Button'
+import { Text } from 'react-native'
 
 const index = () => {
   const router = useRouter()

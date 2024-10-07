@@ -25,28 +25,28 @@ import Video from './Video';
 
 const icons={
     home: Home,
-    mail:Mail,
-    lock:Lock,
-    user:User,
-    heart:Heart,
-    plus:Plus,
-    search:Search,
-    location:Location,
-    call:Call,
-    camera:Camera,
-    edit:Edit,
-    arrowLeft:ArrowLeft,
+    mail: Mail,
+    lock: Lock,
+    user: User,
+    heart: Heart,
+    plus: Plus,
+    search: Search,
+    location: Location,
+    call: Call,
+    camera: Camera,
+    edit: Edit,
+    arrowLeft: ArrowLeft,
     threeDotsCircle: ThreeDotsCircle,
     threeDotsHorizontal: ThreeDotsHorizontal,
     comment: Comment,
     share: Share,
     send: Send,
-    delete:Delete,
-    logout:Logout,
+    delete: Delete,
+    logout: Logout,
     image: Image,
-    video:Video,
+    video: Video,
 }
-const Icon = (name, ...props) => {
+const Icon = ({name, ...props}) => {
     const IconComponent = icons[name];
   return (
     <IconComponent 

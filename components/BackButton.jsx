@@ -1,7 +1,8 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import {  StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {theme} from '../constants/theme'
 import Icon from '../assets/icons'
+import { Pressable } from 'react-native'
 
 const BackButton = ({size=26, router}) => {
   return (
