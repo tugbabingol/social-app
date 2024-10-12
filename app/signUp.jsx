@@ -21,7 +21,35 @@ const SignUp = () => {
       Alert.alert('Sign Up', "please fill all the fields!");
       return;
     }
-    //good to go
+    
+    let name = nameRef.current.trim();
+    let email = nameRef.current.trim();
+    let password = nameRef.current.trim();
+
+    setLoading(true);
+
+    const {
+      data: { session },
+      error
+    } = await supabase.auth.signUp({
+      email,
+      password,
+      options:{
+        data :{
+          name
+        }
+      }
+    });
+
+    setLoading(false);
+
+    //console.log('session: ', session);
+    //console.log('error: ', error);
+
+    if (error) {
+        Alert.alert('Sign up', error.message);
+    }
+
   }
   return (
     <ScreenWrapper bg="white">
