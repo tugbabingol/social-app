@@ -8,6 +8,7 @@ import { hp, wp } from '../helpers/common'
 import { theme } from '../constants/theme'
 import Input from '../components/Input'
 import Button from '../components/Button'
+import { supabase } from '../lib/supabase'
 
 const SignUp = () => {
   const router = useRouter();
@@ -28,6 +29,11 @@ const SignUp = () => {
 
     setLoading(true);
 
+    if (password.length < 6) {
+      Alert.alert('Error', 'Password should be at least 6 characters.');
+      return;
+    }
+    
     const {
       data: { session },
       error
@@ -43,8 +49,8 @@ const SignUp = () => {
 
     setLoading(false);
 
-    //console.log('session: ', session);
-    //console.log('error: ', error);
+    console.log('session: ', session);
+    console.log('error: ', error);
 
     if (error) {
         Alert.alert('Sign up', error.message);

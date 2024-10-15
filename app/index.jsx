@@ -2,8 +2,9 @@ import React from 'react'
 import { useRouter } from 'expo-router'
 import ScreenWrapper from '../components/ScreenWrapper'
 import Button from '../components/Button'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import Loading from '../components/Loading'
+
 
 const index = () => {
   const router = useRouter()
