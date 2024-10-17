@@ -29,11 +29,6 @@ const SignUp = () => {
 
     setLoading(true);
 
-    if (password.length < 6) {
-      Alert.alert('Error', 'Password should be at least 6 characters.');
-      return;
-    }
-    
     const {
       data: { session },
       error
