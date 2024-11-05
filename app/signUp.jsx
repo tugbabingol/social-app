@@ -23,6 +23,7 @@ const SignUp = () => {
       return;
     }
     
+    
     let name = nameRef.current.trim();
     let email = nameRef.current.trim();
     let password = nameRef.current.trim();
@@ -33,8 +34,8 @@ const SignUp = () => {
       data: { session },
       error
     } = await supabase.auth.signUp({
-      email,
-      password,
+      email: email,
+      password: password,
       options:{
         data :{
           name

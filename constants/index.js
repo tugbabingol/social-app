@@ -1,2 +1,2 @@
-export const supabaseUrL= 'Your supabase url';
-export const supabaseAnonKey = 'Your supabase anonkey';
+export const supabaseUrL= 'Your supabase Url';
+export const supabaseAnonKey = 'Your supabase AnonKey';

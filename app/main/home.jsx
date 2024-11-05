@@ -3,7 +3,7 @@ import React from 'react'
 import ScreenWrapper from '../../components/ScreenWrapper'
 import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../contexts/AuthContext';
-import { hp, wp } from '../helpers/common'
+import { hp, wp } from '../../helpers/common'
 import { theme } from '../../constants/theme';
 import { Icon } from '../../assets/icons';
 import { useRouter } from 'expo-router';
