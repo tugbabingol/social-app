@@ -28,10 +28,23 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+<<<<<<< HEAD
       "expo-router"
     ],
     "experiments": {
       "typedRoutes": true
+=======
+      "expo-router",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "expo-router": {
+        "appRoot": "./app"
+      }
+>>>>>>> 6e5dcde (Social App)
     }
   }
 }
