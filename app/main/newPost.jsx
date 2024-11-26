@@ -22,6 +22,8 @@ import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router'
 import Icon from '../../assets/icons'
 import { getSupabaseFileUrl } from '../../services/imageService'
+import { Video } from 'expo-av';
+import { createOrUpdatePost } from '../../services/postService'
 
 const NewPost = () => {
 
@@ -74,8 +76,8 @@ const NewPost = () => {
 
     return 'video';
   }
-  const getFileUri = file =>{
-    if(!file) return null;
+  const getFileUri = file => {
+    if (!file) return null;
     if (isLocalFile(file)) {
       return file.uri;
     }
@@ -83,7 +85,31 @@ const NewPost = () => {
     return getSupabaseFileUrl(file)?.uri;
   }
   const onSubmit = async () => {
+    if (!bodyRef.current && !file) {
+      Alert.alert('Post', "please choose animage or add post body");
+      return;
+    }
 
+    let data = {
+      file,
+      body: bodyRef.current,
+      userId: user?.id,
+    }
+
+    //create post
+
+    setLoading(true);
+    let res = await createOrUpdatePost(data);
+    setLoading(false);
+    //console.log('post res: ', res);
+    if (res.success) {
+      setFile(null);
+      bodyRef.current = '';
+      editorRef.current?.setContentHTML('');
+      router.back();
+    } else {
+      Alert.alert('Post', res.msg);
+    }
   }
 
   console.log('file uri: ', getFileUri(file));
@@ -119,14 +145,22 @@ const NewPost = () => {
               <View style={styles.file}>
                 {
                   getFileType(file) == 'video' ? (
-                    <></>
+                    <Video
+                      style={{ flex: 1 }}
+                      source={{
+                        uri: getFileUri(file)
+                      }}
+                      useNativeControls
+                      resizeMode='cover'
+                      isLooping
+                    />
                   ) : (
-                    <Image source = {{uri: getFileUri(file)}} resizeMode='cover' style={{flex:1}} />
+                    <Image source={{ uri: getFileUri(file) }} resizeMode='cover' style={{ flex: 1 }} />
                   )
                 }
 
-                <Pressable style= {styles.closeIcon}>
-                  <Icon name="delete" size={20} color="white"/>
+                <Pressable style={styles.closeIcon} onPress={() => setFile(null)}>
+                  <Icon name="delete" size={20} color="white" />
                 </Pressable>
               </View>
             )
